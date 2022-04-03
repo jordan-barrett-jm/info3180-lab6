@@ -8,13 +8,19 @@
     </div>
     <p>You are searching for {{ searchTerm }}</p>
  </form>
- <ul class="news__list">
-    <li v-for="article in articles" class="news__item">
-        <img :src=article.urlToImage />
-        {{ article.title }}
-        {{ article.description }}
-    </li>
- </ul>
+ <div class='container'>
+    <div class='row' >
+        <div v-for="article in articles" class="col-md-3 news__item">
+        <div class = 'card'>
+            <img :src=article.urlToImage class="card-img-top" />
+            <div class='card-body'>
+                <h5 class='card-title'>{{ article.title }}</h5>
+                <p class='card-text'>{{ article.description }}</p>
+            </div>
+        </div >
+        </div>
+    </div>
+    </div>
 </template>
 <script>
 export default {
